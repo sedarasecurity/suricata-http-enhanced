@@ -1,7 +1,29 @@
+# userdata1 = destination fqdn
+# userdata2 = URI
+# userdata3 = user agent
+# userdata4 = referrer
+# userdata5 = HTTP method
+# userdata6 = HTTP protocol version
+# userdata7 = http status code
+# userdata8 = bytes
 [[regexes]]
-  name = "example regex entry"
-  description = "example regex entry description"
-  re = "(?P<msg>.*)"
+  name = "Non-redirected"
+  description = ""
+  re = '''^\d{1,2}\/\d{1,2}\/\d{4}-\d{2}:\d{2}:\d{2}\.\d+\s(?P<udone>\S+)\s\[\*\*\]\s(?P<udtwo>\S+)\s\[\*\*\]\s(?P<udthree>.+)\s\[\*\*\]\s(?P<udfour>.*)\s\[\*\*\]\s(?P<translatepluginsid>(?P<udfive>\S+))\s\[\*\*\]\s(?P<udsix>\S+)\s\[\*\*\]\s(?P<udseven>(\<no\sstatus\>|\d+))\s\[\*\*\]\s(?P<udeight>\d+)\sbytes\s\[\*\*\]\s(?P<resolvsrcip>\IPV4):(?P<srcport>\PORT)\s-\>\s(?P<resolvdstip>\IPV4):(?P<resolvdstport>\PORT)$'''
+
+# userdata1 = destination fqdn
+# userdata2 = URI
+# userdata3 = user agent
+# userdata4 = referrer
+# userdata5 = HTTP method
+# userdata6 = HTTP protocol version
+# userdata7 = http status code
+# userdata8 = bytes
+# userdata9 = redirected url
+[[regexes]]
+  name = "Redirected"
+  description = ""
+  re = '''^\d{1,2}\/\d{1,2}\/\d{4}-\d{2}:\d{2}:\d{2}\.\d+\s(?P<udone>\S+)\s\[\*\*\]\s(?P<udtwo>\S+)\s\[\*\*\]\s(?P<udthree>.+)\s\[\*\*\]\s(?P<udfour>.+)\s\[\*\*\]\s(?P<translatepluginsid>(?P<udfive>\S+))\s\[\*\*\]\s(?P<udsix>\S+)\s\[\*\*\]\s(?P<udseven>(\<no\sstatus\>|\d+))\s\=\>\s(?P<udnine>\S+)\s\[\*\*\]\s(?P<udeight>\d+)\sbytes\s\[\*\*\]\s(?P<resolvsrcip>\IPV4):(?P<srcport>\PORT)\s-\>\s(?P<resolvdstip>\IPV4):(?P<resolvdstport>\PORT)$'''
 
 [options]
   show_matches = true
@@ -12,19 +34,19 @@
 
 [plugin]
   id = 84030
-  name = "default-plugin-name"
-  version = ""
+  name = "suricata-http-enhanced"
+  version = "v1.0.0"
   description = ""
-  log_file = "/var/log/syslog"
-  website = "http://www.example.org"
+  log_file = "/var/log/suricata/http.log"
+  website = "https://gitlab.sedara.io/av-plugins/suricata-http-enhanced"
   log_format = "-"
 
 [vendor]
-  name = "Default Vendor"
-  model = "Default Vendor Model"
-  version = "-"
+  name = "Open Information Security Foundation"
+  model = "Suricata"
+  version = "2.x"
   per_asset = false
 
 [author]
-  name = "Default Author"
-  email = "default@example.org"
+  name = "Sedara, LLC."
+  email = "devs@sedarasecurity.com"
