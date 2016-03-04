@@ -43,7 +43,7 @@
 
 [vendor]
   name = "Open Information Security Foundation"
-  model = "Suricata"
+  model = "Suricata HTTP"
   version = "2.x"
   per_asset = false
 
