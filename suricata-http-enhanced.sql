@@ -1,6 +1,6 @@
 DELETE FROM plugin WHERE id = "84030";
 DELETE FROM plugin_sid where plugin_id = "84030";
-INSERT INTO plugin (id, type, name, description, product_type, vendor) VALUES (84030, 4, 'suricata-http-enhanced', 'Suricata', 4, 'Open Information Security Foundation');
+INSERT INTO plugin (id, type, name, description, product_type, vendor) VALUES (84030, 1, 'suricata-http-enhanced', 'Suricata', 4, 'Open Information Security Foundation');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`category_id`,`subcategory_id`,`reliability`,`priority`,`name`) VALUES (84030, 1, 3, 30, 1, 1, 'Suricata HTTP: GET');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`category_id`,`subcategory_id`,`reliability`,`priority`,`name`) VALUES (84030, 2, 3, 30, 1, 1, 'Suricata HTTP: CONNECT');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`category_id`,`subcategory_id`,`reliability`,`priority`,`name`) VALUES (84030, 3, 3, 30, 1, 1, 'Suricata HTTP: POST');
